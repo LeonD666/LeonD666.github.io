@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>微信支付</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <!-- 左边：公司 Logo -->
+    <div class="logo">
+        <img src="/images/Logo 100x40.jpg" alt="公司Logo">
+    </div>
+    
+    <nav>
+      <a href="/index.html">首页</a>
+      <a href="/活动通知/index.html">活动通知</a>
+      <a href="/产品介绍/index.html">产品介绍</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="payment">
+        <h1>支付进行中</h1>
+        <p>请用微信扫描下面二维码，进行支付</p>
+        <img src="/images/QR-wx.jpg" alt="微信收款二维码">
+    </div>
+    <div><h3>订购清单</h3></div>
+    <div id="cart-display"></div>
+    <div class="submit">
+        <h3>提交支付订单的单号</h3>
+        <input type="tel" id="payment-number" pattern="\d{31}" maxlength="31" placeholder="请复制31位的微信支付单号填入"><br>
+    </div>
+    <div class="customer-info">
+        <h3>收件人信息</h3>
+        <input type="text" id="name" placeholder="请填入收件人姓名"><br><br>
+        <input type="tel" id="phone" pattern="\d{11}" maxlength="11" placeholder="请输入收件人11位手机号"><br><br>
+        <textarea rows="4" style="margin-bottom: 3px;" id="address" placeholder="收货地址"></textarea><br><br>                           
+    </div>
+    <div>
+        <button onclick="submitInfo()">订单提交</button>
+        <p id="tip" style="margin-top:15px;"></p>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <p>公司名称：深圳市XX餐饮有限公司</p>
+    <p>联系电话：0755-XXXXXXXX</p>
+    <p>联系地址：深圳市XX区XX路XX号</p>
+  </footer>
+
+  <script src="/js/Submit-wx-out.js"></script>
+</body>
+</html>
