@@ -2,8 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>微信支付</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/payment_style.css">
 </head>
 <body>
   <header>
@@ -21,21 +22,25 @@
 
   <main>
     <div class="payment">
-        <h1>支付进行中</h1>
+        <h1>支付进行中...</h1>
         <p>请用微信扫描下面二维码，进行支付</p>
         <img src="/images/QR-wx.jpg" alt="微信收款二维码">
     </div>
     <div><h3>订购清单</h3></div>
-    <div id="cart-display"></div>
+    <div id="cart-display"></div><br>
+
     <div class="submit">
         <h3>提交支付订单的单号</h3>
         <input type="tel" id="payment-number" pattern="\d{31}" maxlength="31" placeholder="请复制31位的微信支付单号填入"><br>
-    </div>
+    </div><br>
+
     <div class="customer-info">
         <h3>收件人信息</h3>
-        <input type="text" id="name" placeholder="请填入收件人姓名"><br><br>
-        <input type="tel" id="phone" pattern="\d{11}" maxlength="11" placeholder="请输入收件人11位手机号"><br><br>
-        <textarea rows="4" style="margin-bottom: 3px;" id="address" placeholder="收货地址"></textarea><br><br>                           
+        <input type="text" id="name" placeholder="请填入收件人姓名">
+        <br>
+        <input type="tel" id="phone" pattern="\d{11}" maxlength="11" placeholder="请输入收件人11位手机号">
+        <br>
+        <textarea rows="4" style="margin-bottom: 3px;" id="address" placeholder="收货地址"></textarea>                           
     </div>
     <div>
         <button onclick="submitInfo()">订单提交</button>

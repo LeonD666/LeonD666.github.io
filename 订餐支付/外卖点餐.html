@@ -2,8 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>外卖点餐</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/order_style.css">
 </head>
 <body>
   <header>
@@ -24,33 +25,33 @@
     <!-- Product List-->
     <div class="products">
         <h2 style="color: blue;">产品列表</h2>
-        <div class="Product">
-            <h4>面包</h4>
+        <div class="category">
             <img src="/images/Bread - 77x49.jpg" alt="面包">
+            <h4>面包</h4>            
             <p>价格: ￥5</p>
             <button onclick="addToCart('面包', 5)">选购</button>
         </div>
-        <div class="Product">
-            <h4>豆浆</h4>
+        <div class="category">
             <img src="/images/soy_milk 77x112.jpg" alt="豆浆">
+            <h4>豆浆</h4>
             <p>价格: ￥2.5</p>
             <button onclick="addToCart('豆浆', 2.5)">选购</button>
         </div>
-        <div class="Product">
-            <h4>卤蛋</h4>
+        <div class="category">
             <img src="/images/egg 77x59.jpg" alt="卤蛋">
+            <h4>卤蛋</h4>
             <p>价格: ￥2.5</p>
             <button onclick="addToCart('卤蛋', 2.5)">选购</button>
         </div>
-        <div class="Product">
-            <h4>打包费</h4>
+        <div class="category">
             <img src="/images/package 70x70.jpg" alt="包装盒/袋">
+            <h4>打包费</h4>
             <p>价格: ￥1</p>
             <button onclick="addToCart('打包费', 1)">外卖必选</button>
         </div>
-        <div class="Product">
-            <h4>运费</h4>
+        <div class="category">
             <img src="/images/deliver 70x70.jpg" alt="跑腿">
+            <h4>运费</h4>
             <p>价格: ￥3</p>
             <button onclick="addToCart('运费', 3)">外卖必选</button>
         </div>
@@ -58,7 +59,7 @@
     <!-- Shopping Cart -->
     <div class="cart">
       <h2 style="color: blue;">购物车</h2>
-      <table>
+      <table class="table">
           <thead>
               <tr>
                   <th>序号</th>
@@ -73,11 +74,11 @@
       </table>
       <p class="cart-total"><strong>总价:￥<span id="cart-total">0</span></strong></p><br>
     </div>
-    <div>
+    <div class="paymentMethod">
       <h2 style="color: blue;">支付方式：</h2>
       <button type="button" onclick="goToPayment('wechat')">微信支付</button>
       <button type="button" onclick="goToPayment('alipay')">支付宝支付</button>
-    </div>
+    </div><br>
   </main>
 
   <footer>

@@ -2,8 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>店内点餐</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/order_style.css">
 </head>
 <body>
   <header>
@@ -24,19 +25,19 @@
     <!-- Product List-->
     <div class="products">
         <h2 style="color: blue;">产品列表</h2>
-        <div class="Product">
+        <div class="category">
             <h4>面包</h4>
             <img src="/images/Bread - 77x49.jpg" alt="面包">
             <p>价格: ￥5</p>
             <button onclick="addToCart('面包', 5)">选购</button>
         </div>
-        <div class="Product">
+        <div class="category">
             <h4>豆浆</h4>
             <img src="/images/soy_milk 77x112.jpg" alt="豆浆">
             <p>价格: ￥2.5</p>
             <button onclick="addToCart('豆浆', 2.5)">选购</button>
         </div>
-        <div class="Product">
+        <div class="category">
             <h4>卤蛋</h4>
             <img src="/images/egg 77x59.jpg" alt="卤蛋">
             <p>价格: ￥2.5</p>
@@ -69,7 +70,7 @@
         </select>
       </h5><br>
     </div>
-    <div>
+    <div class="paymentMethod">
       <h2 style="color: blue;">支付方式：</h2>
       <button type="button" onclick="goToPayment('wechat')">微信支付</button>
       <button type="button" onclick="goToPayment('alipay')">支付宝支付</button>

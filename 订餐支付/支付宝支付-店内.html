@@ -2,8 +2,9 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>支付宝支付</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/payment_style.css">
 </head>
 <body>
   <header>
@@ -21,20 +22,23 @@
 
   <main>
     <div class="payment">
-        <h1>支付进行中</h1>
+        <h1>支付进行中...</h1>
         <p>请用支付宝扫描下面二维码，进行支付</p>
         <img src="/images/QR-zfb.jpg" alt="支付宝收款二维码">
     </div>
     <div><h3>订购清单</h3></div>
-    <div id="cart-display"></div>
+    <div id="cart-display"></div><br>
+
     <div class="submit">
         <h3>提交支付订单的单号</h3>
-        <input type="tel" id="payment-number" pattern="\d{28}" maxlength="28" placeholder="请复制28位的支付宝单号填入"><br>
-    </div>
+        <input type="tel" id="payment-number" pattern="\d{28}" maxlength="28" placeholder="请复制28位的支付宝单号填入">
+    </div><br>
+
     <div class="customer-info">
-        <h3>店内就餐位置</h3>
-        <input type="number" id="position" max="99" placeholder="请填入桌号，外带选0"><br><br>
-    </div>
+        <h3>请填入店内就餐桌号</h3>
+        <input type="number" id="position" max="99" placeholder="请填入桌号，外带选0">
+    </div><br>
+    
     <div>
         <button onclick="submitInfo()">订单提交</button>
         <p id="tip" style="margin-top:15px;"></p>

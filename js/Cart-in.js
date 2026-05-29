@@ -32,7 +32,7 @@ function updateCart() {
         <td>${product.quantity}</td>
         <td>${subtotal}</td>
         <td>
-            <button onclick="removeFromCart('${product.name}')">Remove</button>
+            <button onclick="removeFromCart('${product.name}')">移除</button>
         </td>
         `;
         cartItems.appendChild(tr);
