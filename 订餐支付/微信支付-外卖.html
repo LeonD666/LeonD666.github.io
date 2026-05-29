@@ -45,13 +45,7 @@
         <textarea rows="4" style="margin-bottom: 3px;" id="address" placeholder="收货地址"></textarea>                           
     </div>
     <div>
-        <button onclick="
-          const payNumb = document.getElementById('payment-number').value.trim();
-          const custName = document.getElementById('name').value.trim();
-          const custPhone = document.getElementById('phone').value.trim();
-          const custAddr = document.getElementById('address').value.trim();
-          submitMessage(payNumb, custName, custPhone, custAddr);
-          ">订单提交</button>
+        <button id="submitBtn" type="button">订单提交</button>
         <p id="tip" style="margin-top:15px;"></p>
     </div>
 
