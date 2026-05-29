@@ -80,8 +80,8 @@ async function submitInfo(){
     `;
 
 const supabase = supabase.createClient(
-  '你的Project_URL',
-  '你的anon_key'
+'https://vslbcwnuqlgegvfnrfej.supabase.co/rest/v1/',
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZzbGJjd251cWxnZWd2Zm5yZmVqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAwMzY0NjIsImV4cCI6MjA5NTYxMjQ2Mn0.tSKIrkx4VoAzxllVq34Xme8ToAP1yHLDI_rCMDWykEQ'
 );
 
 // 向Supabase提交表单时调用这个函数
