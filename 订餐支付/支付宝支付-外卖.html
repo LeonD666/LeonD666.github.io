@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>支付宝支付</title>
   <link rel="stylesheet" href="/css/payment_style.css">
+  <!-- 引入 Supabase JS 客户端 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <header>
@@ -41,7 +43,7 @@
         <textarea rows="4" style="margin-bottom: 3px;" id="address" placeholder="收货地址"></textarea><br>                           
     </div>
     <div>
-        <button onclick="submitInfo()">订单提交</button>
+        <button id="submitBtn" type="button">订单提交</button>
         <p id="tip" style="margin-top:15px;"></p>
     </div>
 
@@ -54,6 +56,6 @@
     <p>联系地址：深圳市XX区XX路XX号</p>
   </footer>
 
-  <script src="/js/Submit-zfb-out.js"></script>
+  <script src="/js/Submit-zfb-out2.js"></script>
 </body>
 </html>
