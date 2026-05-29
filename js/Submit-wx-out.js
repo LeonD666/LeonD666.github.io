@@ -11,7 +11,7 @@ async function submitInfo(){
         return;
     }
 
-        // 固定位数验证
+    // 支付订单号码固定位数验证
     if(payNumb.length !== 31){
         tip.innerText = '微信支付单号必须为31位';
         tip.style.color = 'red';
@@ -23,7 +23,15 @@ async function submitInfo(){
         return;
     }
 
-    // 固定位数验证
+    // 名称和地址不能为空验证
+    if(!custName || !custAddr){
+        tip.innerText = '名称和地址不能为空';
+        tip.style.color = 'red';
+        return;
+    }
+    
+    
+    // 手机号固定位数验证
     if(custPhone.length !== 11){
         tip.innerText = '手机号必须为11位';
         tip.style.color = 'red';
@@ -35,7 +43,11 @@ async function submitInfo(){
         return;
     }
 
-    // 提取表格数据...
+    // 将用户提交的内容导入supabase
+    submitMessage(payNumb, custName, custPhone, custAddr);  // ← 调用 Supabase 的提交函数
+
+
+    // 提取购物车内容表格数据...
     const cartContent = [];
     const rows = document.querySelectorAll('#cart-display tbody tr');
     rows.forEach((row, index) => {
@@ -48,40 +60,6 @@ async function submitInfo(){
             金额: cells[4].textContent
         });
     });
-
-    if(!custName || !custAddr){
-        tip.innerText = '名称和地址不能为空';
-        tip.style.color = 'red';
-        return;
-    }
-    
-    try{
-        const res = await fetch('/api/submit',{
-            method:'POST',
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({
-                payNumb,
-                custName, 
-                custPhone,
-                custAddr,
-                cartdisplay: cartContent,
-                cartTotal
-            })
-        });
-        const result = await res.json();
-        tip.innerText = result.msg;
-        tip.style.color = 'green';
-        console.log(result.msg);
-        
-        // 清空网页
-        document.getElementById('payment-number').value = '';
-        document.getElementById('name').value = '';
-        document.getElementById('phone').value = ''; 
-        document.getElementById('address').value = ''; 
-    }catch(err){
-        tip.innerText = '提交失败';
-        tip.style.color = 'red';
-    }
 }
 
 // 页面加载时将购物车的内容传入
@@ -100,3 +78,30 @@ async function submitInfo(){
         </table>
         <p>总价: ￥${cartTotal}</p>
     `;
+
+const supabase = supabase.createClient(
+  '你的Project_URL',
+  '你的anon_key'
+);
+
+// 向Supabase提交表单时调用这个函数
+    async function submitMessage(payNumb, custName, custPhone, custAddr) {
+    const { error } = await supabase
+        .from('messages')
+        .insert([{ 
+        name: custName, 
+        payId: payNumb, 
+        phone: custPhone, 
+        address: custAddr 
+        }]);
+    
+    if (error) alert('提交失败');
+    else alert('提交成功');
+      
+    // 清空网页
+    document.getElementById('payment-number').value = '';
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = ''; 
+    document.getElementById('address').value = ''; 
+
+    }    
