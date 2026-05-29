@@ -6,6 +6,7 @@
 
 // 2. 等待 DOM 加载完毕
 document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('customerForm');
     const phoneInput = document.getElementById('phone');
     const payIdInput = document.getElementById('payment-number');
        
