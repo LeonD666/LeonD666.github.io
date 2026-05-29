@@ -26,7 +26,7 @@ async function submitData() {
       {
         name: document.getElementById("name").value, // 假设你有对应的 input ID
         phone: document.getElementById("phone").value,
-        payId: document.getElementById("payment-number").value,
+        pay_order: document.getElementById("payment-number").value,
         address: document.getElementById("address").value,
       },
     ]);
